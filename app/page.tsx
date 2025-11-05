@@ -1,66 +1,62 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
+import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex flex-col items-center justify-center h-screen w-screen">
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5">
+          <div className="w-24 h-24 relative">
+            <Image
+              src="/simplyliam.png"
+              alt="Profile Picture"
+              quality={100}
+              fill
+              className="absolute object-cover rounded-full "
+            />
+          </div>
+          <p className="max-w-[30em] font-semibold">
+            I design, I build, I play. Blending clean visuals with a touch of
+            interaction is where I find joy, crafting one project, one motion,
+            one pixel at a time.
           </p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="flex flex-col w-full gap-2.5">
+          <Accordion collapsible type="single" defaultValue="work">
+            <AccordionItem value="work">
+              <AccordionTrigger className="text-lg cursor-pointer">Work</AccordionTrigger>
+              <AccordionContent>
+                <Link href="https://quote-calculator-pi.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" className="w-full justify-between cursor-pointer">
+                    <h1>Quote Calculator</h1>
+                    <div className="flex items-center justify-center w-5 h-5 bg-accent p-2.5">
+                      <HugeiconsIcon icon={ArrowRight02Icon} />
+                    </div>
+                  </Button>
+                </Link>
+                <Link href="https://google-keep-react-five.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" className="w-full justify-between cursor-pointer">
+                    <h1>Google Keep Clone</h1>
+                    <div className="flex items-center justify-center w-5 h-5 bg-accent p-2.5">
+                      <HugeiconsIcon icon={ArrowRight02Icon} />
+                    </div>
+                  </Button>
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
