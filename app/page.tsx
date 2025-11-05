@@ -25,7 +25,8 @@ export default function Home() {
               className="absolute object-cover rounded-full"
             />
           </div>
-          <p className="max-w-full sm:max-w-[30em] font-semibold text-start break-words">
+          <h1 className="font-semibold text-2xl">Hey, I&apos;m Liam</h1>
+          <p className="max-w-full sm:max-w-[30em] font-medium text-start">
             I design and build interactive web applications and tools, blending clean visuals with thoughtful interactions, one project, one motion, one pixel at a time.
           </p>
         </div>
