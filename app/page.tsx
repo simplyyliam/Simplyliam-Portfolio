@@ -25,9 +25,7 @@ export default function Home() {
             />
           </div>
           <p className="max-w-[30em] font-semibold">
-            I design, I build, I play. Blending clean visuals with a touch of
-            interaction is where I find joy, crafting one project, one motion,
-            one pixel at a time.
+              I design and build interactive web applications and tools, blending clean visuals with thoughtful interactions, one project, one motion, one pixel at a time.
           </p>
         </div>
 
